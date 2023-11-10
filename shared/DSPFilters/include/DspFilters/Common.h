@@ -58,10 +58,13 @@ THE SOFTWARE.
 #include <algorithm>
 
 #ifdef _MSC_VER
-namespace tr1 = std::tr1;
+	#if (_MSC_VER >= 1920)
+	// VC9/Visual Studio 2019 or above specific stuff
+	namespace tr1 = std;
+	#else
+	// less than VC9/Visual Studio 2019 specific stuff
+	namespace tr1 = std::tr1;
+	#endif
 #else
-namespace tr1 = std;
-#endif
-
-
+	namespace tr1 = std;
 #endif
