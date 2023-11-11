@@ -68,3 +68,4 @@ THE SOFTWARE.
 #else
 	namespace tr1 = std;
 #endif
+#endif
